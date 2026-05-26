@@ -2054,10 +2054,33 @@ footer {
   .tab { flex-shrink: 0; }
   .includes { grid-template-columns: 1fr; }
   .price-table th:first-child, .price-table td:first-child { font-size: 12px; }
-  .galeria-grid { grid-template-columns: repeat(2, 1fr); }
-  .gal-1, .gal-2 { grid-column: span 1; }
-  .gal-3 { grid-column: span 2; aspect-ratio: 16/10; }
-  .gal-4, .gal-5, .gal-6, .gal-7 { grid-column: span 1; }
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .gal-feature {
+    grid-column: 1 / -1 !important;
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  .gal-feature-img { min-height: 280px; }
+  .gal-1 {
+    grid-column: 1 / 2 !important;
+    aspect-ratio: 1/1 !important;
+    display: block !important;
+  }
+  .gal-2 {
+    grid-column: 2 / 3 !important;
+    aspect-ratio: 1/1 !important;
+    display: block !important;
+  }
+  .gal-3 {
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 16/10 !important;
+    display: block !important;
+  }
+  .gal-4, .gal-5, .gal-6, .gal-7 { display: none !important; }
   .gal-feature-body { padding: 36px 28px; }
   .testi-grid { grid-template-columns: 1fr; }
   .premios-grid { grid-template-columns: 1fr; }
@@ -2070,10 +2093,14 @@ footer {
 }
 
 @media (max-width: 480px) {
-  /* Keep 2-up grid even on very small screens; just shrink the gap */
-  .galeria-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .gal-1, .gal-2 { grid-column: span 1; }
-  .gal-3 { grid-column: span 2; aspect-ratio: 16/10; }
+  /* Keep 2-up grid even on very small screens; shrink the gap */
+  .galeria-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .gal-feature { grid-column: 1 / -1 !important; }
+  .gal-1 { grid-column: 1 / 2 !important; aspect-ratio: 1/1 !important; }
+  .gal-2 { grid-column: 2 / 3 !important; aspect-ratio: 1/1 !important; }
+  .gal-3 { grid-column: 1 / -1 !important; aspect-ratio: 16/10 !important; }
+  .gal-feature-body { padding: 28px 20px; }
+  .gal-feature-body h3 { font-size: 28px; }
 }
 
 /* ═══════════════════════════════════════════════════════
