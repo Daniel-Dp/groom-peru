@@ -1367,9 +1367,30 @@ section { position: relative; }
 @media (max-width: 700px) {
   .jm-tratamientos { grid-template-columns: 1fr; }
   .jm-extras { grid-template-columns: 1fr; }
-  .jm-table-card { padding: 24px 20px; }
-  .jm-table th, .jm-table td { font-size: 12px; }
-  .jm-table td:not(:first-child) { font-size: 15px; }
+  .jm-table-card { padding: 20px 16px; }
+  .servicios .servicios-jm-inner { padding: 24px 16px; margin-top: 40px; }
+  .jm-table-card h3 { font-size: 26px; }
+  .jm-card-head p { font-size: 13px; }
+
+  /* Make pricing tables horizontally scrollable on mobile when needed */
+  .jm-table-card { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .jm-table { min-width: 100%; table-layout: auto; }
+  .jm-table th, .jm-table td {
+    font-size: 12px;
+    padding: 10px 6px;
+    white-space: nowrap;
+  }
+  .jm-table td:not(:first-child) { font-size: 15px; padding-left: 12px; }
+  .jm-table th:not(:first-child) { padding-left: 12px; }
+  .jm-tag {
+    padding: 3px 8px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  /* tier price table same treatment */
+  .servicios .service-panel { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .price-table th, .price-table td { white-space: nowrap; font-size: 12px; padding: 10px 6px; }
+  .price-table td:not(:first-child) { padding-left: 12px; }
 }
 .galeria { background: var(--cream); }
 .galeria-grid {
@@ -2034,7 +2055,9 @@ footer {
   .includes { grid-template-columns: 1fr; }
   .price-table th:first-child, .price-table td:first-child { font-size: 12px; }
   .galeria-grid { grid-template-columns: repeat(2, 1fr); }
-  .gal-1, .gal-2, .gal-3, .gal-4, .gal-5, .gal-6, .gal-7 { grid-column: span 1; }
+  .gal-1, .gal-2 { grid-column: span 1; }
+  .gal-3 { grid-column: span 2; aspect-ratio: 16/10; }
+  .gal-4, .gal-5, .gal-6, .gal-7 { grid-column: span 1; }
   .gal-feature-body { padding: 36px 28px; }
   .testi-grid { grid-template-columns: 1fr; }
   .premios-grid { grid-template-columns: 1fr; }
@@ -2047,8 +2070,10 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .galeria-grid { grid-template-columns: 1fr; }
-  .gal-1, .gal-2, .gal-3, .gal-4, .gal-5, .gal-6, .gal-7 { grid-column: 1; }
+  /* Keep 2-up grid even on very small screens; just shrink the gap */
+  .galeria-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gal-1, .gal-2 { grid-column: span 1; }
+  .gal-3 { grid-column: span 2; aspect-ratio: 16/10; }
 }
 
 /* ═══════════════════════════════════════════════════════
