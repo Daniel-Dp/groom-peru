@@ -278,6 +278,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ─────────── Mobile hamburger menu ───────────
+  const burger = $('.nav-burger');
+  const drawer = $('#mobile-menu');
+  if (burger && drawer) {
+    const closeDrawer = () => {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+    const openDrawer = () => {
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+    burger.addEventListener('click', () => {
+      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    });
+    // Close button inside drawer
+    const closeBtn = $('.mobile-menu-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    // Close drawer when any link is clicked
+    $$('.mobile-menu-links a, .mobile-menu-footer a').forEach(a => {
+      a.addEventListener('click', closeDrawer);
+    });
+    // Close on ESC
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+    });
+  }
+
   // Initial render
   updateSedeUI();
   renderPriceTable();
