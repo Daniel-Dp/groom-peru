@@ -1569,114 +1569,135 @@ section { position: relative; }
 
 /* Featured big shot */
 
-/* ─── FEATURED GALLERY (FIX MOBILE WIDTH + LAYOUT) ─── */
-
 .gal-feature {
-  grid-column: span 12;
+  width: 100%;
   display: grid;
   grid-template-columns: 5fr 7fr;
+  gap: 0;
   background: var(--black);
   color: white;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  margin-bottom: 16px;
+
+  /* ✅ ESTE ES EL CAMBIO */
+  margin: 24px 0 32px;
+
+  min-height: 320px;
+  align-items: stretch;
 }
 
 .gal-feature-img {
+  position: relative;
+  overflow: hidden;
   min-height: 320px;
 }
 .gal-feature-img img {
+  display: block;
   width: 100%;
-  height: 100%;
+   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
 }
-
 .gal-feature-body {
-  width: 100%;
-  max-width: 100%;
   padding: 40px 44px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
-.gal-feature-body .eyebrow {
-  color: var(--yellow);
-  margin-bottom: 16px;
+.gal-feature-body {
+  overflow: hidden; /* 🔥 ESTA ES LA CLAVE */
 }
+
+@media (max-width: 800px) {
+  .gal-feature {
+    width: 100%;      /* asegura ancho completo */
+    overflow: hidden; /* evita corte lateral */
+  }
+}
+
+.gal-feature-body .eyebrow { color: var(--yellow); margin-bottom: 16px; }
 .gal-feature-body h3 {
   font-family: 'Fraunces', serif;
+  font-weight: 600;
   font-size: 42px;
+  line-height: 1.05;
   margin-bottom: 20px;
 }
+.gal-feature-body h3 em { font-style: italic; color: var(--yellow); }
 .gal-feature-body p {
   color: rgba(255,255,255,0.7);
+  font-size: 15px;
+  line-height: 1.65;
   margin-bottom: 24px;
-  line-height: 1.6;
 }
 
-/* 🔥 ESTE ES EL FIX IMPORTANTE */
 .gal-feature-stats {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  width: 100%;
-  padding-top: 20px;
+  display: flex;
+  gap: 28px;
+  padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,0.1);
+  flex-wrap: wrap; /* 🔥 ESTA ES LA LÍNEA QUE TE FALTA */
 }
 
-.gal-feature-stats div {
+
+@media (max-width: 900px) {
+  .gal-feature {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gal-feature-img {
+    order: 1;
+  }
+
+  .gal-feature-body {
+    order: 2;
+    padding: 32px 20px;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .gal-feature-stats {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 columna */
+    gap: 16px;
+  }
+
+  .gal-feature-stats div {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   width: 100%;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding-bottom: 8px;
+  min-width: 0; /* ✅ adicional, NO reemplaza */
 }
-.gal-feature-stats div:last-child {
-  border-bottom: 0;
+
+
 }
 
 .gal-feature-stats b {
+    font-size: 22px;
+    word-break: break-word; /* 🔥 evita que "2h 30m" se corte */
+  }
+
+.gal-feature-stats div {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.gal-feature-stats b {
+  display: block;
   font-family: 'Fraunces', serif;
-  font-size: 26px;
-  color: var(--yellow);
   font-weight: 600;
-  line-height: 1.1;
-  word-break: break-word;
+  font-size: 28px;
+  color: var(--yellow);
+  margin-bottom: 4px;
+  letter-spacing: 0;
+  text-transform: none;
 }
-
-/* MOBILE */
-@media (max-width: 800px) {
-  .gal-feature {
-    grid-template-columns: 1fr;
-  }
-  .gal-feature-img {
-    min-height: 260px;
-  }
-  .gal-feature-body {
-    padding: 28px 20px;
-  }
-  .gal-feature-body h3 {
-    font-size: 28px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ─── PREMIOS ─── */
 .premios {
