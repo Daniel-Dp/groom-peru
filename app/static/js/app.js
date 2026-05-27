@@ -256,7 +256,36 @@ function initSlider() {
   dots.forEach((d, i) => d.addEventListener('click', () => { go(i); reset(); }));
   reset();
 }
+// ─────────── Gallery slider ───────────
+function initGalSlider() {
+  const slider = document.querySelector('.gal-slider');
+  if (!slider) return;
+  const items = Array.from(slider.children);
+  let cur = 0;
 
+  const perView = () => window.innerWidth <= 800 ? 2 : 3;
+
+  function show() {
+    const n = perView();
+    items.forEach((el, i) => {
+      el.classList.toggle('visible', i >= cur && i < cur + n);
+    });
+    document.querySelector('.gal-prev').disabled = cur === 0;
+    document.querySelector('.gal-next').disabled = cur + perView() >= items.length;
+  }
+
+  document.querySelector('.gal-prev').addEventListener('click', () => {
+    cur = Math.max(0, cur - perView());
+    show();
+  });
+  document.querySelector('.gal-next').addEventListener('click', () => {
+    cur = Math.min(items.length - perView(), cur + perView());
+    show();
+  });
+
+  window.addEventListener('resize', show);
+  show();
+}
 // ─────────── Init ───────────
 document.addEventListener('DOMContentLoaded', () => {
   // Sede switch click handlers (in nav + sedes section)
@@ -316,4 +345,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderExtraServices();
   renderDesmotados();
   initSlider();
+initGalSlider();
 });
