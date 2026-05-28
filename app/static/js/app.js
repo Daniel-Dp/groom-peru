@@ -140,12 +140,13 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
 // ─────────── Renderers ───────────
 function renderPriceTable() {
+  const panel = $('#tier-panel');
+  if (!panel) return; // Not on a page with the price table (e.g. dermatologia.html)
   const sizes = SIZE_LABELS[currentSede];
   const data = PRICES[currentSede][currentTier];
   const tier = TIER_INFO[currentTier];
 
   // Tier panel content
-  const panel = $('#tier-panel');
   panel.innerHTML = `
     <h3>${tier.name} <span class="lvl">${tier.tag}</span></h3>
     <p class="desc">${tier.desc}</p>
@@ -181,6 +182,7 @@ function renderPriceTable() {
 }
 
 function renderExtraServices() {
+  if (!$('#price-cortes')) return;
   const sm = currentSede === 'san-miguel';
   const cortes = PRICES[currentSede].cortes;
   const trat = PRICES[currentSede].tratamiento;
@@ -199,8 +201,9 @@ function renderExtraServices() {
 }
 
 function renderDesmotados() {
-  // Same fixed table per official price sheet
-  $('#price-desmotados').innerHTML = `Desde <b>S/ 15</b> · varía por tipo y talla`;
+  const el = $('#price-desmotados');
+  if (!el) return;
+  el.innerHTML = `Desde <b>S/ 15</b> · varía por tipo y talla`;
 }
 
 function updateSedeUI() {
@@ -238,54 +241,68 @@ function setTier(tier) {
 function initSlider() {
   const slides = document.querySelectorAll('.hero-bg .hero-slide');
   const dots = document.querySelectorAll('.hero-dots span');
+  if (slides.length === 0) return; // no hero slider on this page
   let cur = 0;
   let timer;
-
   function go(n) {
     slides[cur].classList.remove('on');
-    dots[cur].classList.remove('on');
+    if (dots[cur]) dots[cur].classList.remove('on');
     cur = (n + slides.length) % slides.length;
     slides[cur].classList.add('on');
-    dots[cur].classList.add('on');
+    if (dots[cur]) dots[cur].classList.add('on');
   }
   function next() { go(cur + 1); }
   function reset() { clearInterval(timer); timer = setInterval(next, 5500); }
 
-  $('.hero-arrow.left').addEventListener('click', () => { go(cur - 1); reset(); });
-  $('.hero-arrow.right').addEventListener('click', () => { go(cur + 1); reset(); });
+  const prev = $('.hero-arrow.left');
+  const nxt  = $('.hero-arrow.right');
+  if (prev) prev.addEventListener('click', () => { go(cur - 1); reset(); });
+  if (nxt)  nxt.addEventListener('click', () => { go(cur + 1); reset(); });
   dots.forEach((d, i) => d.addEventListener('click', () => { go(i); reset(); }));
   reset();
 }
 // ─────────── Gallery slider ───────────
+
 function initGalSlider() {
   const slider = document.querySelector('.gal-slider');
   if (!slider) return;
+
   const items = Array.from(slider.children);
+  const prev = document.querySelector('.gal-prev');
+  const next = document.querySelector('.gal-next');
+
+  if (!prev || !next) return;
+
   let cur = 0;
 
   const perView = () => window.innerWidth <= 800 ? 2 : 3;
 
   function show() {
     const n = perView();
+
     items.forEach((el, i) => {
       el.classList.toggle('visible', i >= cur && i < cur + n);
     });
-    document.querySelector('.gal-prev').disabled = cur === 0;
-    document.querySelector('.gal-next').disabled = cur + perView() >= items.length;
+
+    prev.disabled = cur === 0;
+    next.disabled = cur + n >= items.length;
   }
 
-  document.querySelector('.gal-prev').addEventListener('click', () => {
+  prev.addEventListener('click', () => {
     cur = Math.max(0, cur - perView());
     show();
   });
-  document.querySelector('.gal-next').addEventListener('click', () => {
+
+  next.addEventListener('click', () => {
     cur = Math.min(items.length - perView(), cur + perView());
     show();
   });
 
   window.addEventListener('resize', show);
+
   show();
 }
+
 // ─────────── Init ───────────
 document.addEventListener('DOMContentLoaded', () => {
   // Sede switch click handlers (in nav + sedes section)

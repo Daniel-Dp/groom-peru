@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GROOM PERÚ — Dermatología Veterinaria · Tratamientos profesionales para tu mascota</title>
+<meta name="description" content="Servicios dermatológicos profesionales para perros y gatos. Diagnóstico preciso, tratamientos personalizados y atención especializada en Lima.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body class="page-derm">
+
+<!-- ━━━ NAV ━━ -->
+<nav class="nav">
+  <div class="nav-inner2">
+    <a href="index.html" class="nav-logo2" aria-label="Groom Perú">
+      <img src="{{ url_for('static', filename='img/groom_no_fondo.png') }}" alt="GROOM PERÚ Pet Salón">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="dermatologia.html" class="nav-link-derm" aria-current="page">Dermatología</a></li>
+      <li><a href="index.html#galeria">Galería</a></li>
+      <li><a href="index.html#premios">Premios</a></li>
+      <li><a href="index.html#testimonios">Testimonios</a></li>
+      <li><a href="index.html#sedes">Sedes</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://wa.me/51908923521?text=Hola%20Groom%20Per%C3%BA%2C%20quiero%20agendar%20una%20evaluaci%C3%B3n%20dermatol%C3%B3gica%20%F0%9F%90%BE" target="_blank" rel="noopener" class="nav-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 4H5a2 2 0 0 0-2 2v14l4-4h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+        <span>Agendar cita</span>
+      </a>
+      <button class="nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <svg class="ico-burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="13" x2="20" y2="13"/><line x1="4" y1="19" x2="20" y2="19"/>
+        </svg>
+        <svg class="ico-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+          <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <ul class="mobile-menu-links">
+      <li><a href="index.html#servicios">✦ Servicios</a></li>
+      <li><a href="dermatologia.html">✦ Dermatología</a></li>
+      <li><a href="index.html#galeria">✦ Galería</a></li>
+      <li><a href="index.html#premios">✦ Premios</a></li>
+      <li><a href="index.html#testimonios">✦ Testimonios</a></li>
+      <li><a href="index.html#sedes">✦ Sedes</a></li>
+    </ul>
+    <div class="mobile-menu-footer">
+      <a href="https://wa.me/51908923521?text=Hola%20Groom%20Per%C3%BA%2C%20quiero%20agendar%20una%20evaluaci%C3%B3n%20dermatol%C3%B3gica%20%F0%9F%90%BE" target="_blank" rel="noopener" class="btn btn-yellow" style="width:100%;justify-content:center;">
+        Agendar por WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Back-to-home floating button -->
+<a href="/" class="back-home" aria-label="Volver al inicio">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+  </svg>
+  <span>Volver al inicio</span>
+</a>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ HERO ━━ -->
+<section class="derm-hero">
+  <div class="derm-hero-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="derm-hero-grid">
+      <div class="derm-hero-text">
+        <span class="derm-eyebrow">★ Dermatología Veterinaria</span>
+        <h1 class="display derm-hero-title">
+          Tu perro se rasca<br>
+          <em>sin parar.</em>
+          <span class="derm-hero-subline">Eso tiene un origen. <b>Y tiene solución.</b></span>
+        </h1>
+        <p class="derm-hero-sub">
+          En <b>GROOM PERÚ</b> combinamos grooming experto y diagnóstico dermatológico
+          para llegar a la raíz del problema — no solo al síntoma. Porque un pelaje sano
+          empieza por dentro.
+        </p>
+        <div class="derm-hero-actions">
+          <a href="https://wa.me/51908923521?text=Hola%20Groom%20Per%C3%BA%2C%20quiero%20agendar%20una%20evaluaci%C3%B3n%20dermatol%C3%B3gica%20%F0%9F%90%BE" target="_blank" rel="noopener" class="btn btn-derm-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.2-1.6A12 12 0 1 0 12 0Zm0 22a10 10 0 0 1-5.1-1.4l-.36-.21-3.7.97 1-3.6-.24-.37A10 10 0 1 1 12 22Z"/></svg>
+            Agendar evaluación dermatológica
+          </a>
+        </div>
+      </div>
+      <!-- Image placeholder (cliente proporcionará) -->
+      <div class="derm-hero-photo">
+        <div class="img-placeholder img-placeholder-large">
+          <div class="img-placeholder-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z"/><circle cx="8" cy="8.5" r="1.5"/></svg>
+          </div>
+          <span class="img-placeholder-label">Foto de la doctora<br>en consulta</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ Banner separator ━━ -->
+<div class="derm-banner-strip">
+  <div class="container"><span>★ GROOM DERMATOLOGÍA ★ GROOM DERMATOLOGÍA ★ GROOM DERMATOLOGÍA</span></div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SÍNTOMAS ━━ -->
+<section class="section derm-symptoms">
+  <div class="container">
+    <div class="derm-symptoms-grid">
+      <div class="derm-symptoms-text">
+        <span class="eyebrow" style="color:var(--teal-dark);">Diagnóstico</span>
+        <h2 class="h2 derm-h2">Esta consulta es ideal si tu mascota <em>presenta:</em></h2>
+        <ul class="derm-symptoms-list">
+          <li>
+            <span class="derm-list-ico">🔥</span>
+            <span class="derm-list-text">Picazón constante</span>
+          </li>
+          <li>
+            <span class="derm-list-ico">🩹</span>
+            <span class="derm-list-text">Heridas, enrojecimiento o mal olor</span>
+          </li>
+          <li>
+            <span class="derm-list-ico">❄️</span>
+            <span class="derm-list-text">Caspa o pérdida de pelo</span>
+          </li>
+          <li>
+            <span class="derm-list-ico">🐾</span>
+            <span class="derm-list-text">Lamido excesivo en ciertas zonas</span>
+          </li>
+          <li>
+            <span class="derm-list-ico">👂</span>
+            <span class="derm-list-text">Infecciones en orejas o entre los dedos</span>
+          </li>
+        </ul>
+      </div>
+      <div class="derm-symptoms-video">
+        <div class="img-placeholder img-placeholder-video">
+          <div class="img-placeholder-icon play-icon">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="img-placeholder-label">Video explicativo<br>de la Dra.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ Banner separator ━━ -->
+<div class="derm-banner-strip">
+  <div class="container"><span>✦ GROOM DERMATOLOGÍA ✦ GROOM DERMATOLOGÍA ✦ GROOM DERMATOLOGÍA</span></div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ PROBLEMAS COMUNES ━━ -->
+<section class="section derm-problems">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--teal-dark);">Patologías</span>
+      <h2 class="h2 derm-h2">Problemas dermatológicos <em>más comunes</em></h2>
+      <p class="lead">Identificamos y tratamos una amplia gama de condiciones dermatológicas que afectan a perros y gatos.</p>
+    </div>
+    <div class="derm-problems-grid">
+      <article class="derm-problem-card">
+        <div class="derm-problem-img">
+          <div class="img-placeholder">
+            <div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <span class="img-placeholder-label">Foto caso</span>
+          </div>
+        </div>
+        <div class="derm-problem-body">
+          <h3>Dermatitis Alérgica</h3>
+          <p>Irritación, enrojecimiento y picazón constante por alergias alimentarias o ambientales.</p>
+        </div>
+      </article>
+      <article class="derm-problem-card">
+        <div class="derm-problem-img">
+          <div class="img-placeholder">
+            <div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <span class="img-placeholder-label">Foto caso</span>
+          </div>
+        </div>
+        <div class="derm-problem-body">
+          <h3>Infecciones por Hongos</h3>
+          <p>Manchas circulares, descamación y pérdida de pelo localizada.</p>
+        </div>
+      </article>
+      <article class="derm-problem-card">
+        <div class="derm-problem-img">
+          <div class="img-placeholder">
+            <div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <span class="img-placeholder-label">Foto caso</span>
+          </div>
+        </div>
+        <div class="derm-problem-body">
+          <h3>Dermatitis Bacteriana</h3>
+          <p>Pústulas, costras y mal olor causados por infecciones bacterianas.</p>
+        </div>
+      </article>
+      <article class="derm-problem-card">
+        <div class="derm-problem-img">
+          <div class="img-placeholder">
+            <div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <span class="img-placeholder-label">Foto caso</span>
+          </div>
+        </div>
+        <div class="derm-problem-body">
+          <h3>Otitis</h3>
+          <p>Inflamación de los oídos, picazón, mal olor, enrojecimiento y dolor.</p>
+        </div>
+      </article>
+      <article class="derm-problem-card">
+        <div class="derm-problem-img">
+          <div class="img-placeholder">
+            <div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <span class="img-placeholder-label">Foto caso</span>
+          </div>
+        </div>
+        <div class="derm-problem-body">
+          <h3>Quistes &amp; tumoraciones</h3>
+          <p>Bultos o crecimientos en la piel que requieren evaluación profesional.</p>
+        </div>
+      </article>
+      <article class="derm-problem-card">
+        <div class="derm-problem-img">
+          <div class="img-placeholder">
+            <div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <span class="img-placeholder-label">Foto caso</span>
+          </div>
+        </div>
+        <div class="derm-problem-body">
+          <h3>Pododermatitis</h3>
+          <p>Inflamación entre los dedos, lamido excesivo y heridas en las patas.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ POR QUÉ ELEGIRNOS ━━ -->
+<section class="section derm-why">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--yellow);">¿Por qué elegirnos?</span>
+      <h2 class="h2" style="color:white;">Atención dermatológica <em style="color:var(--yellow);font-style:normal;">profesional &amp; cercana.</em></h2>
+    </div>
+    <div class="derm-why-grid">
+      <div class="derm-why-card">
+        <div class="derm-why-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Evaluación completa</h3>
+        <p>Diagnóstico preciso con todas las pruebas incluidas en una sola consulta.</p>
+      </div>
+      <div class="derm-why-card">
+        <div class="derm-why-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3>Especialización exclusiva</h3>
+        <p>Nos dedicamos únicamente a problemas de piel y pelo de perros y gatos.</p>
+      </div>
+      <div class="derm-why-card">
+        <div class="derm-why-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Resultados inmediatos</h3>
+        <p>Las muestras se revisan en el microscopio al instante durante la consulta.</p>
+      </div>
+      <div class="derm-why-card">
+        <div class="derm-why-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5l5 4-5 4"/><path d="M3 19c0-4 3-7 7-7"/><circle cx="17" cy="17" r="3"/></svg>
+        </div>
+        <h3>Perros &amp; gatos</h3>
+        <p>Experiencia específica en ambas especies con protocolos adaptados.</p>
+      </div>
+      <div class="derm-why-card">
+        <div class="derm-why-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Sedes en Lima</h3>
+        <p>Atención en San Miguel y Jesús María — ubicaciones convenientes.</p>
+      </div>
+      <div class="derm-why-card">
+        <div class="derm-why-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Tratamiento personalizado</h3>
+        <p>Cada caso recibe atención individualizada y específica para tu engreído.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ PRUEBAS EN CONSULTA ━━ -->
+<section class="section derm-tests">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--teal-dark);">Tecnología &amp; precisión</span>
+      <h2 class="h2 derm-h2">Pruebas que se realizan <em>en consulta</em></h2>
+    </div>
+    <ul class="derm-tests-list">
+      <li class="derm-test">
+        <span class="derm-test-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+        </span>
+        <div class="derm-test-body">
+          <h4>Citología</h4>
+          <p>Detecta infecciones, bacterias e inflamaciones en la piel.</p>
+        </div>
+      </li>
+      <li class="derm-test">
+        <span class="derm-test-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l18-18"/><path d="M16 8l4 4"/></svg>
+        </span>
+        <div class="derm-test-body">
+          <h4>Raspado cutáneo</h4>
+          <p>Identifica ácaros y otros problemas profundos de la piel.</p>
+        </div>
+      </li>
+      <li class="derm-test">
+        <span class="derm-test-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l3-3 3 3 5-5 7 7"/></svg>
+        </span>
+        <div class="derm-test-body">
+          <h4>Tricograma</h4>
+          <p>Estudia la salud del pelo y posibles enfermedades capilares.</p>
+        </div>
+      </li>
+      <li class="derm-test">
+        <span class="derm-test-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9A7 7 0 1 1 5 9c0-3 2-7 7-7s7 4 7 7z"/><path d="M12 16v6"/></svg>
+        </span>
+        <div class="derm-test-body">
+          <h4>Otoscopía</h4>
+          <p>Permite profundizar en los oídos para detectar infecciones.</p>
+        </div>
+      </li>
+      <li class="derm-test">
+        <span class="derm-test-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M12 9v6"/><path d="M9 15h6l-1 6h-4z"/></svg>
+        </span>
+        <div class="derm-test-body">
+          <h4>Lámpara de Wood</h4>
+          <p>Identificación de hongos y alteraciones en la piel con luz UV.</p>
+        </div>
+      </li>
+      <li class="derm-test">
+        <span class="derm-test-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg>
+        </span>
+        <div class="derm-test-body">
+          <h4>Microscopía</h4>
+          <p>Análisis detallado de las muestras obtenidas al instante.</p>
+        </div>
+      </li>
+      <li class="derm-test">
+        <span class="derm-test-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M21 12c-2 4-5 6-9 6s-7-2-9-6c2-4 5-6 9-6s7 2 9 6z"/></svg>
+        </span>
+        <div class="derm-test-body">
+          <h4>Dermatoscopía</h4>
+          <p>Examen visual no invasivo para evaluar lesiones cutáneas con mayor precisión.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="derm-tests-note">
+      <span class="derm-tests-note-ico">🔬</span>
+      <p>Las muestras se revisan en el microscopio <b>al instante</b> para un tratamiento adecuado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ LA DOCTORA ━━ -->
+<section class="section derm-doctor">
+  <div class="container">
+    <div class="derm-doctor-grid">
+      <div class="derm-doctor-photo">
+        <div class="img-placeholder img-placeholder-tall">
+          <div class="img-placeholder-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4 4-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <span class="img-placeholder-label">Foto de la<br>Dra. Veterinaria</span>
+        </div>
+      </div>
+      <div class="derm-doctor-body">
+        <span class="eyebrow" style="color:var(--teal-dark);">Conoce a tu especialista</span>
+        <h2 class="h2 derm-h2">Atención profesional <em>con experiencia.</em></h2>
+        <blockquote class="derm-quote">
+          "A lo largo de los años hemos acompañado a cientos de familias a entender y tratar
+          los problemas de piel de sus mascotas. Para nosotros, la dermatología es más que
+          una especialidad: es un compromiso con su bienestar."
+        </blockquote>
+        <div class="derm-credentials-title">
+          <span class="derm-cred-bullet">💬</span> Conócenos un poco más
+        </div>
+        <ul class="derm-credentials">
+          <li><span class="derm-cred-ico">✅</span> Médicos veterinarios titulados</li>
+          <li><span class="derm-cred-ico">🎓</span> Especialización en Dermatología Veterinaria</li>
+          <li><span class="derm-cred-ico">🌎</span> Formación internacional continua</li>
+          <li><span class="derm-cred-ico">📚</span> Docencia y conferencias en temas dermatológicos</li>
+          <li><span class="derm-cred-ico">🔬</span> Experiencia exclusiva en dermatología canina y felina</li>
+          <li><span class="derm-cred-ico">💚</span> Atención cercana, ética y empática</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ANTES Y DESPUÉS ━━ -->
+<section class="section derm-results">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--teal-dark);">Casos reales</span>
+      <h2 class="h2 derm-h2">Resultados reales <em>de nuestros pacientes</em></h2>
+      <p class="lead">Casos exitosos tratados por nuestro equipo profesional.</p>
+    </div>
+
+    <div class="derm-results-grid">
+      <article class="derm-result-card">
+        <div class="derm-result-ba">
+          <div class="derm-ba-item">
+            <div class="derm-ba-label">ANTES</div>
+            <div class="img-placeholder">
+              <div class="img-placeholder-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/></svg></div>
+            </div>
+          </div>
+          <div class="derm-ba-item">
+            <div class="derm-ba-label after">DESPUÉS</div>
+            <div class="img-placeholder">
+              <div class="img-placeholder-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="derm-result-text">
+          <p>
+            <b>Zafira</b> vino a <b>consulta dermatológica</b> con un cuadro de <b>dermatitis atópica</b>
+            y una alimentación que no contribuía a su mejoría. Iniciamos el <b>tratamiento dermatológico
+            adecuado</b> y ajustamos su dieta para potenciar su recuperación. A los pocos días, regresó
+            a su control mostrando <b>avances</b>, y continuamos con su tratamiento a largo plazo para
+            mantener su <b>piel sana.</b>
+          </p>
+        </div>
+      </article>
+
+      <article class="derm-result-card">
+        <div class="derm-result-ba">
+          <div class="derm-ba-item">
+            <div class="derm-ba-label">ANTES</div>
+            <div class="img-placeholder">
+              <div class="img-placeholder-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/></svg></div>
+            </div>
+          </div>
+          <div class="derm-ba-item">
+            <div class="derm-ba-label after">DESPUÉS</div>
+            <div class="img-placeholder">
+              <div class="img-placeholder-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="derm-result-text">
+          <p>
+            <b>Anshuman</b> tiene una <b>enfermedad autoinmune</b> que afecta la <b>piel</b> de su
+            <b>cabeza</b> y <b>patas</b>. Por mucho tiempo estuvo mal medicado y ahora, sabiendo su
+            diagnóstico, lleva un tratamiento a largo plazo que le da <b>calidad de vida.</b>
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TESTIMONIOS ━━ -->
+<section class="section derm-testi">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--teal-dark);">Familias felices</span>
+      <h2 class="h2 derm-h2">Lo que dicen <em>nuestros clientes</em></h2>
+    </div>
+
+    <div class="derm-testi-grid">
+      <article class="derm-testi-card">
+        <div class="derm-testi-stars">★★★★★</div>
+        <p>Mi perrita se lamía las patitas exageradamente y nos decían que era ansiedad. Gastamos en análisis y medicinas para hongos pero no daban solución al problema real. Llevé a mi perrita con la doctora y realmente le dio el tratamiento necesario y preciso para su alergia. Recomiendo 100% a la Dra.</p>
+        <div class="derm-testi-author">
+          <div class="derm-testi-avatar" style="background:#FFE4B5;color:#A65A00;">JB</div>
+          <div>
+            <div class="derm-testi-name">jesus.box.5</div>
+            <div class="derm-testi-meta">Reseña Google</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="derm-testi-card">
+        <div class="derm-testi-stars">★★★★★</div>
+        <p>Lo que me gusta de esta doctora, que sanó a mi perro BLUE, es que siempre me contesta el teléfono con amabilidad cuando le hacía consultas respecto al tratamiento. BLUE YA NO SE RASCA COMO ANTES.</p>
+        <div class="derm-testi-author">
+          <div class="derm-testi-avatar" style="background:#D4E9FF;color:#1A5BC4;">AJ</div>
+          <div>
+            <div class="derm-testi-name">Alberto James</div>
+            <div class="derm-testi-meta">Reseña Google</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="derm-testi-card">
+        <div class="derm-testi-stars">★★★★★</div>
+        <p>Excelentes! mis enanas súper mejor de su alergia, me doy el viaje de la vida cada mes pero vale la pena con esa calidad humana que atiende a mis peques. Yuki y Morita felices.</p>
+        <div class="derm-testi-author">
+          <div class="derm-testi-avatar" style="background:#FFD6E0;color:#B82355;">CC</div>
+          <div>
+            <div class="derm-testi-name">Celia Chávez M.</div>
+            <div class="derm-testi-meta">Reseña Google</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ PRECIO / CONSULTA ━━ -->
+<section class="section derm-pricing">
+  <div class="container">
+    <div class="derm-pricing-card">
+      <span class="derm-pricing-tag">★ Consulta dermatológica completa</span>
+      <h2 class="derm-pricing-h2">¿Tu mascota necesita una <em>evaluación?</em></h2>
+      <p class="derm-pricing-sub">Consulta completa con todas las pruebas incluidas</p>
+
+      <div class="derm-pricing-amount">
+        <span class="derm-pricing-currency">S/</span>
+        <span class="derm-pricing-number">149</span>
+      </div>
+
+      <ul class="derm-pricing-list">
+        <li><span class="check">✓</span> Citología</li>
+        <li><span class="check">✓</span> Raspado cutáneo</li>
+        <li><span class="check">✓</span> Tricograma</li>
+        <li><span class="check">✓</span> Otoscopía</li>
+        <li><span class="check">✓</span> Lámpara de Wood</li>
+        <li><span class="check">✓</span> Microscopía</li>
+        <li><span class="check">✓</span> Dermatoscopía</li>
+        <li class="highlight"><span class="check">⚡</span> Resultado de las pruebas <b>al instante</b></li>
+      </ul>
+
+      <a href="https://wa.me/51908923521?text=Hola%20Groom%20Per%C3%BA%2C%20quiero%20agendar%20una%20consulta%20dermatol%C3%B3gica%20%F0%9F%90%BE" target="_blank" rel="noopener" class="btn btn-derm-primary derm-pricing-cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.2-1.6A12 12 0 1 0 12 0Zm0 22a10 10 0 0 1-5.1-1.4l-.36-.21-3.7.97 1-3.6-.24-.37A10 10 0 1 1 12 22Z"/></svg>
+        Agenda tu consulta ahora
+      </a>
+      <p class="derm-pricing-foot">📍 Consultorios en San Miguel &amp; Jesús María</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FAQ ━━ -->
+<section class="section derm-faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--yellow);">Resuelve tus dudas</span>
+      <h2 class="h2" style="color:white;">Preguntas <em style="color:var(--yellow);font-style:normal;">frecuentes</em></h2>
+    </div>
+
+    <div class="derm-faq-list">
+      <details class="derm-faq-item" open>
+        <summary>
+          <span class="derm-faq-ico">📍</span>
+          <span class="derm-faq-q">¿Dónde atienden las consultas?</span>
+          <span class="derm-faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="derm-faq-a">Atendemos en nuestras dos sedes: <b>San Miguel</b> (Av. De Los Precursores 871) y <b>Jesús María</b> (Av. Cayetano Heredia 562). Las consultas dermatológicas se realizan con cita previa.</div>
+      </details>
+      <details class="derm-faq-item">
+        <summary>
+          <span class="derm-faq-ico">🩺</span>
+          <span class="derm-faq-q">¿Qué incluye la primera consulta dermatológica?</span>
+          <span class="derm-faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="derm-faq-a">Evaluación completa, todas las pruebas necesarias (citología, raspado, tricograma, otoscopía, lámpara de Wood, microscopía y dermatoscopía) y diagnóstico al instante con plan de tratamiento personalizado.</div>
+      </details>
+      <details class="derm-faq-item">
+        <summary>
+          <span class="derm-faq-ico">👩‍⚕️</span>
+          <span class="derm-faq-q">¿La doctora es especialista en dermatología veterinaria?</span>
+          <span class="derm-faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="derm-faq-a">Sí. Nuestro equipo cuenta con formación específica y exclusiva en dermatología veterinaria, con experiencia internacional y capacitación continua.</div>
+      </details>
+      <details class="derm-faq-item">
+        <summary>
+          <span class="derm-faq-ico">🐶</span>
+          <span class="derm-faq-q">¿Atienden solo perros o también gatos?</span>
+          <span class="derm-faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="derm-faq-a">Atendemos tanto a <b>perros como a gatos</b> con protocolos adaptados a cada especie.</div>
+      </details>
+      <details class="derm-faq-item">
+        <summary>
+          <span class="derm-faq-ico">⏱️</span>
+          <span class="derm-faq-q">¿Cuánto dura la consulta?</span>
+          <span class="derm-faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="derm-faq-a">La consulta dermatológica completa toma aproximadamente <b>45 a 60 minutos</b>, incluyendo todas las pruebas, análisis y entrega de diagnóstico.</div>
+      </details>
+      <details class="derm-faq-item">
+        <summary>
+          <span class="derm-faq-ico">📅</span>
+          <span class="derm-faq-q">¿Cómo agendo una cita?</span>
+          <span class="derm-faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="derm-faq-a">Puedes agendar directamente por <b>WhatsApp al 908 923 521</b>. Te confirmamos disponibilidad en el momento.</div>
+      </details>
+      <details class="derm-faq-item">
+        <summary>
+          <span class="derm-faq-ico">🛁</span>
+          <span class="derm-faq-q">¿Puedo bañar a mi mascota antes de la cita?</span>
+          <span class="derm-faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="derm-faq-a"><b>No</b>. Te recomendamos no bañar a tu mascota al menos <b>5 días antes</b> de la consulta para no alterar las muestras de piel y obtener resultados precisos.</div>
+      </details>
+      <details class="derm-faq-item">
+        <summary>
+          <span class="derm-faq-ico">🐾</span>
+          <span class="derm-faq-q">¿Puedo bañar a mi mascota después de la consulta?</span>
+          <span class="derm-faq-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="derm-faq-a">Sí, una vez tomadas las muestras puedes bañar a tu mascota normalmente — incluso te lo podemos hacer aquí mismo con productos recomendados según el diagnóstico.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ UBICACIÓN ━━ -->
+<section class="section derm-location">
+  <div class="container">
+    <div class="derm-location-grid">
+      <div class="derm-location-map">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-77.1033%2C-12.0850%2C-77.0300%2C-12.0640&amp;layer=mapnik&amp;marker=-12.06952%2C-77.09931" loading="lazy" title="Mapa sedes GROOM PERÚ"></iframe>
+      </div>
+      <div class="derm-location-info">
+        <span class="eyebrow" style="color:var(--teal-dark);">Encuéntranos</span>
+        <h2 class="h2 derm-h2">Visítanos en <em>nuestras sedes</em></h2>
+
+        <div class="derm-address-block">
+          <div class="derm-address-title">📍 Direcciones</div>
+          <ul class="derm-address-list">
+            <li><b>San Miguel:</b> Av. De Los Precursores 871</li>
+            <li><b>Jesús María:</b> Av. Cayetano Heredia 562</li>
+          </ul>
+        </div>
+
+        <div class="derm-address-block">
+          <div class="derm-address-title">🕒 Horario de atención</div>
+          <p>Lunes a Sábado de <b>9:30 am – 5:30 pm</b></p>
+          <p style="opacity:0.7;font-size:13px;">Consultas dermatológicas con cita previa</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CTA FINAL ━━ -->
+<section class="derm-cta-final">
+  <div class="container">
+    <h2 class="derm-cta-h2">¡No esperes <em>más!</em></h2>
+    <p class="derm-cta-sub">Tu mascota merece alivio inmediato. Cada día que pasa, su malestar puede empeorar.</p>
+    <a href="https://wa.me/51908923521?text=Hola%20Groom%20Per%C3%BA%2C%20quiero%20agendar%20una%20consulta%20dermatol%C3%B3gica%20%F0%9F%90%BE" target="_blank" rel="noopener" class="btn btn-wa derm-cta-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.2-1.6A12 12 0 1 0 12 0Zm0 22a10 10 0 0 1-5.1-1.4l-.36-.21-3.7.97 1-3.6-.24-.37A10 10 0 1 1 12 22Z"/></svg>
+      Agenda ahora — Promoción limitada
+    </a>
+    <p class="derm-cta-foot">📍 Consultorios disponibles en San Miguel &amp; Jesús María</p>
+  </div>
+</section>
+
+<!-- ━━━ FOOTER ━━ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-derm.png" alt="GROOM PERÚ Pet Salón">
+        <p>Staff de expertos en peluquería canina y dermatología veterinaria. Dos sedes en Lima — San Miguel y Jesús María.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/groom_peru" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/51908923521" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.2-1.6A12 12 0 1 0 12 0Zm0 22a10 10 0 0 1-5.1-1.4l-.36-.21-3.7.97 1-3.6-.24-.37A10 10 0 1 1 12 22Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Servicios</div>
+        <ul>
+          <li><a href="index.html#servicios">Baño Classic</a></li>
+          <li><a href="index.html#servicios">Baño Premium</a></li>
+          <li><a href="index.html#servicios">Baño Gold</a></li>
+          <li><a href="dermatologia.html">Dermatología</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Sedes</div>
+        <ul>
+          <li><a href="index.html#sedes">San Miguel</a></li>
+          <li><a href="index.html#sedes">Jesús María</a></li>
+          <li><a href="https://wa.me/51908923521" target="_blank" rel="noopener">WhatsApp 908 923 521</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Groom Perú</div>
+        <ul>
+          <li><a href="index.html#premios">Premios</a></li>
+          <li><a href="index.html#galeria">Galería</a></li>
+          <li><a href="index.html#testimonios">Testimonios</a></li>
+          <li><a href="https://instagram.com/groom_peru" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 GROOM PERÚ — Pet Salón. Todos los derechos reservados.</span>
+      <span>🐾 Hecho con amor para los petlovers de Lima</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/51908923521?text=Hola%20Groom%20Per%C3%BA%20%F0%9F%90%BE" target="_blank" rel="noopener" class="fab-wa" aria-label="Contactar por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.8-.9-2.07-1s-.47-.15-.67.15-.77 1-.94 1.2-.34.22-.64.07a8.2 8.2 0 0 1-4.07-3.55c-.3-.52.3-.48.87-1.6.1-.2.05-.37-.03-.52s-.67-1.61-.92-2.2c-.24-.58-.49-.5-.67-.51l-.57-.01a1.1 1.1 0 0 0-.8.37c-.27.3-1.04 1.02-1.04 2.49s1.07 2.88 1.22 3.08c.15.2 2.1 3.22 5.08 4.51 1.78.77 2.47.84 3.36.71.54-.08 1.8-.74 2.05-1.45.25-.71.25-1.31.18-1.44-.07-.13-.27-.2-.57-.35Z"/><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.2-1.6A12 12 0 1 0 12 0Zm0 22a10 10 0 0 1-5.1-1.4l-.36-.21-3.7.97 1-3.6-.24-.37A10 10 0 1 1 12 22Z"/></svg>
+</a>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
