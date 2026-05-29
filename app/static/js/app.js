@@ -261,6 +261,30 @@ function initSlider() {
   dots.forEach((d, i) => d.addEventListener('click', () => { go(i); reset(); }));
   reset();
 }
+// ─────────── Dermatología hero slider ───────────
+function initDermHeroSlider() {
+  const hero = document.querySelector('.derm-hero');
+  const wrap = document.querySelector('.derm-hero-slider');
+  if (!hero || !wrap) return;
+  const slides = Array.from(wrap.querySelectorAll('.derm-slide'));
+  const dots = Array.from(hero.querySelectorAll('.derm-slide-dots span'));
+  if (slides.length === 0) return;
+  let cur = 0, timer;
+  function go(n) {
+    slides[cur].classList.remove('on');
+    if (dots[cur]) dots[cur].classList.remove('on');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('on');
+    if (dots[cur]) dots[cur].classList.add('on');
+  }
+  function reset() { clearInterval(timer); timer = setInterval(() => go(cur + 1), 5000); }
+  const prev = hero.querySelector('.derm-slide-arrow.left');
+  const next = hero.querySelector('.derm-slide-arrow.right');
+  if (prev) prev.addEventListener('click', () => { go(cur - 1); reset(); });
+  if (next) next.addEventListener('click', () => { go(cur + 1); reset(); });
+  dots.forEach((d, i) => d.addEventListener('click', () => { go(i); reset(); }));
+  reset();
+}
 // ─────────── Gallery slider ───────────
 
 function initGalSlider() {
@@ -362,5 +386,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderExtraServices();
   renderDesmotados();
   initSlider();
-initGalSlider();
+  initGalSlider();
+  initDermHeroSlider();
 });
