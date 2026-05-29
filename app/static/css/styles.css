@@ -1501,7 +1501,11 @@ section { position: relative; }
   .derm-banner-strip { letter-spacing: 2px; font-size: 10px; }
   .derm-faq-a { padding-left: 22px; }
   .derm-tests-note { flex-direction: column; text-align: center; }
+  .derm-cta-btn, .btn-derm-primary { white-space: normal; text-align: center; line-height: 1.3; }
+  .derm-cta-final { padding: 72px 20px; }
+  .derm-hero-photo .img-placeholder { width: 100%; }
 }
+.page-derm { overflow-x: hidden; }
 .premios {
   background: var(--black);
   color: white; position: relative; overflow: hidden; }
