@@ -128,13 +128,11 @@
         </ul>
       </div>
       <div class="derm-symptoms-video">
-        <div class="img-placeholder img-placeholder-video">
-          <div class="img-placeholder-icon play-icon">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <span class="img-placeholder-label">Video explicativo<br>de la Dra.</span>
-        </div>
-      </div>
+  <video class="derm-video" controls playsinline preload="metadata" poster="{{ url_for('static', filename='img/video-poster-derma.jpg') }}">
+  <source src="{{ url_for('static', filename='videos/videoplayback.mp4') }}" type="video/mp4">
+  Tu navegador no soporta video.
+</video>
+</div>
     </div>
   </div>
 </section>
@@ -487,7 +485,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="{{ url_for('static', filename='img/groom_no_fondo.png') }}" alt="GROOM PERÚ Pet Salón">
+        <img  style="height: 200px"  src="{{ url_for('static', filename='img/groom_no_fondo.png') }}" alt="GROOM PERÚ Pet Salón">
         <p>Staff de expertos en peluquería canina y dermatología veterinaria. Dos sedes en Lima — San Miguel y Jesús María.</p>
         <div class="footer-social">
           <a href="https://instagram.com/groom_peru" target="_blank" rel="noopener" aria-label="Instagram">

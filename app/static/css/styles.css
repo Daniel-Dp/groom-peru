@@ -1683,7 +1683,7 @@ section { position: relative; }
 /* ─── FOOTER ─── */
 footer { background: #000; color: rgba(255,255,255,0.7); padding: 80px 0 32px; }
 .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
-.footer-brand img { height: 170px; width: auto; margin-bottom: 20px; display: block; }
+.footer-brand img { height: 70px; width: auto; margin-bottom: 20px; display: block; }
 .footer-brand p { font-size: 14px; line-height: 1.6; margin-bottom: 24px; font-weight: 500; max-width: 320px; }
 .footer-social { display: flex; gap: 10px; }
 .footer-social a { width: 40px; height: 40px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: all .2s; color: rgba(255,255,255,0.6); }
@@ -1959,4 +1959,13 @@ footer { background: #000; color: rgba(255,255,255,0.7); padding: 80px 0 32px; }
   .gal-3 { grid-column: 1 / -1 !important; aspect-ratio: 16/10 !important; }
   .gal-feature-body { padding: 28px 20px; }
   .gal-feature-body h3 { font-size: 28px; }
+}
+.derm-video {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+  background: var(--teal-dark);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.10);
 }

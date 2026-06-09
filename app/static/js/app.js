@@ -219,8 +219,17 @@ function updateSedeUI() {
   const label = currentSede === 'san-miguel' ? 'San Miguel' : 'Jesús María';
   $$('[data-sede-label]').forEach(el => { el.textContent = label; });
   // Update WhatsApp links with sede context (optional)
+  updateWhatsApp();
 }
-
+function updateWhatsApp() {
+  const num = currentSede === 'san-miguel' ? '51960935704' : '51908923521';
+  const display = currentSede === 'san-miguel' ? '960 935 704' : '908 923 521';
+  $$('a[href*="wa.me/"]').forEach(a => {
+    if (a.classList.contains('wa-fixed')) return;
+    a.href = a.href.replace(/wa\.me\/\d+/, 'wa.me/' + num);
+  });
+  $$('.wa-number').forEach(el => { el.textContent = display; });
+}
 function setSede(sede) {
   if (currentSede === sede) return;
   currentSede = sede;
