@@ -838,6 +838,46 @@
   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.8-.9-2.07-1s-.47-.15-.67.15-.77 1-.94 1.2-.34.22-.64.07a8.2 8.2 0 0 1-4.07-3.55c-.3-.52.3-.48.87-1.6.1-.2.05-.37-.03-.52s-.67-1.61-.92-2.2c-.24-.58-.49-.5-.67-.51l-.57-.01a1.1 1.1 0 0 0-.8.37c-.27.3-1.04 1.02-1.04 2.49s1.07 2.88 1.22 3.08c.15.2 2.1 3.22 5.08 4.51 1.78.77 2.47.84 3.36.71.54-.08 1.8-.74 2.05-1.45.25-.71.25-1.31.18-1.44-.07-.13-.27-.2-.57-.35Z"/><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.2-1.6A12 12 0 1 0 12 0Zm0 22a10 10 0 0 1-5.1-1.4l-.36-.21-3.7.97 1-3.6-.24-.37A10 10 0 1 1 12 22Z"/></svg>
 </a>
 
+<!-- ━━━ FIRST-VISIT PROMO MODAL ━━ -->
+<div class="promo-modal-overlay" id="promoModal" aria-hidden="true">
+  <div class="promo-modal" role="dialog" aria-modal="true" aria-label="Promoción Groom Perú">
+    <button class="promo-modal-close" type="button" aria-label="Cerrar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+
+    <div class="promo-modal-top">
+      <div class="promo-modal-bg" aria-hidden="true">
+        <img src="{{ url_for('static', filename='img/gal-13.jpeg') }}" alt="">
+        <div class="promo-modal-bg-scrim"></div>
+      </div>
+      <span class="promo-modal-eyebrow">Realzamos la belleza canina</span>
+      <span class="promo-modal-logo" role="img" aria-label="GROOM PERÚ Pet Salón"></span>
+      <span class="promo-modal-sede">★ San Miguel</span>
+
+      <h2 class="promo-modal-title">
+        <span class="pm-word">BAÑO</span>
+        <span class="pm-word pm-word-2">+ CORTE</span>
+      </h2>
+      <div class="promo-modal-price">
+        <span class="pm-from">desde</span>
+        <span class="pm-amount">S/ 30</span>
+      </div>
+    </div>
+
+    <div class="promo-modal-bubbles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="promo-modal-bottom">
+      <p class="promo-modal-tagline">Tu engreído merece el mejor look <em>&amp; cuidado.</em></p>
+      <a href="https://wa.me/51960935704?text=Hola%20Groom%20Per%C3%BA%2C%20quiero%20agendar%20mi%20Ba%C3%B1o%20%2B%20Corte%20%F0%9F%90%BE" target="_blank" rel="noopener" class="promo-modal-cta wa-fixed">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18l-1.6 6 6.2-1.6A12 12 0 1 0 12 0Zm0 22a10 10 0 0 1-5.1-1.4l-.36-.21-3.7.97 1-3.6-.24-.37A10 10 0 1 1 12 22Z"/></svg>
+        Agenda tu cita · 960 935 704
+      </a>
+      <span class="promo-modal-addr">📍 Av. De Los Precursores 871 — San Miguel</span>
+    </div>
+  </div>
+</div>
 
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>

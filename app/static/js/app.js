@@ -397,4 +397,34 @@ document.addEventListener('DOMContentLoaded', () => {
   initSlider();
   initGalSlider();
   initDermHeroSlider();
+  initPromoModal(); 
 });
+// ─────────── First-visit promo modal ───────────
+function initPromoModal() {
+  const overlay = document.getElementById('promoModal');
+  if (!overlay) return;
+  const close = overlay.querySelector('.promo-modal-close');
+  const KEY = 'groom_promo_seen';
+
+  const hide = () => {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    try { localStorage.setItem(KEY, '1'); } catch (e) {}
+  };
+  const show = () => {
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  let seen = false;
+  try { seen = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  if (!seen) setTimeout(show, 1200);
+
+  close.addEventListener('click', hide);
+  overlay.addEventListener('click', e => { if (e.target === overlay) hide(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) hide(); });
+  // CTA also closes (and marks seen) after the WA link opens
+  overlay.querySelector('.promo-modal-cta').addEventListener('click', () => setTimeout(hide, 200));
+}
