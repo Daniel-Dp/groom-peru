@@ -221,7 +221,14 @@ function updateSedeUI() {
   // Update WhatsApp links with sede context (optional)
   updateWhatsApp();
 }
+// Generic WhatsApp links follow the selected sede:
+//   San Miguel  → 51960935704
+//   Jesús María → 51908923521
+// Links with class .wa-fixed keep their own number.
 function updateWhatsApp() {
+  // Solo aplica en páginas con selector de sede (index). En dermatología no hay
+  // selector, así que NO tocamos los enlaces — respetan su número original.
+  if (!document.querySelector('.sede-switch')) return;
   const num = currentSede === 'san-miguel' ? '51960935704' : '51908923521';
   const display = currentSede === 'san-miguel' ? '960 935 704' : '908 923 521';
   $$('a[href*="wa.me/"]').forEach(a => {
