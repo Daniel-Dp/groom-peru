@@ -1931,6 +1931,17 @@ footer { background: #000; color: rgba(255,255,255,0.7); padding: 80px 0 32px; }
   text-shadow: 4px 4px 0 rgba(26,26,26,0.18);
 }
 .pm-word-2 { font-size: 44px; }
+.pm-lead {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+  line-height: 1;
+}
 .promo-modal-price {
   display: inline-flex;
   align-items: baseline;
