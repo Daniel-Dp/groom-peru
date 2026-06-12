@@ -143,7 +143,7 @@
 </div>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ PROBLEMAS COMUNES ━━ -->
-<section class="section derm-problems" id="patolgias">
+<section class="section derm-problems">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow" style="color:var(--teal-dark);">Patologías</span>
@@ -152,32 +152,63 @@
     </div>
     <div class="derm-problems-grid">
       <article class="derm-problem-card">
-        <div class="derm-problem-img"><div class="img-placeholder"><div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div><span class="img-placeholder-label">Foto caso</span></div></div>
-        <div class="derm-problem-body"><h3>Dermatitis Alérgica</h3><p>Comezón, piel roja e irritada provocada por alergias a alimentos o al ambiente.</p></div>
+        <img class="derm-problem-photo" src="{{ url_for('static', filename='img/Infeccion1.jpeg') }}" alt="Piel enrojecida e irritada por dermatitis alérgica">
+        <div class="derm-problem-scrim"></div>
+        <span class="derm-problem-num">01</span>
+        <div class="derm-problem-body">
+          <h3>Dermatitis Alérgica</h3>
+          <p>Comezón, piel roja e irritada provocada por alergias a alimentos o al ambiente.</p>
+        </div>
       </article>
       <article class="derm-problem-card">
-        <div class="derm-problem-img"><div class="img-placeholder"><div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div><span class="img-placeholder-label">Foto caso</span></div></div>
-        <div class="derm-problem-body"><h3>Infecciones por Hongos</h3><p>Zonas circulares, piel escamosa y caída de pelo en parches.</p></div>
+        <img class="derm-problem-photo" src="{{ url_for('static', filename='img/Infeccion2.jpeg') }}" alt="Lesión circular con costra por infección de hongos">
+        <div class="derm-problem-scrim"></div>
+        <span class="derm-problem-num">02</span>
+        <div class="derm-problem-body">
+          <h3>Infecciones por Hongos</h3>
+          <p>Zonas circulares, piel escamosa y caída de pelo en parches.</p>
+        </div>
       </article>
       <article class="derm-problem-card">
-        <div class="derm-problem-img"><div class="img-placeholder"><div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div><span class="img-placeholder-label">Foto caso</span></div></div>
-        <div class="derm-problem-body"><h3>Infecciones Bacterianas</h3><p>Granitos, costras y olor desagradable por bacterias en la piel.</p></div>
+        <img class="derm-problem-photo" src="{{ url_for('static', filename='img/Infeccion3.jpeg') }}" alt="Piel con enrojecimiento y costras por infección bacteriana">
+        <div class="derm-problem-scrim"></div>
+        <span class="derm-problem-num">03</span>
+        <div class="derm-problem-body">
+          <h3>Infecciones Bacterianas</h3>
+          <p>Granitos, costras y olor desagradable por bacterias en la piel.</p>
+        </div>
       </article>
       <article class="derm-problem-card">
-        <div class="derm-problem-img"><div class="img-placeholder"><div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div><span class="img-placeholder-label">Foto caso</span></div></div>
-        <div class="derm-problem-body"><h3>Otitis</h3><p>Oídos inflamados, con picazón, mal olor, enrojecimiento y dolor.</p></div>
+        <img class="derm-problem-photo" src="{{ url_for('static', filename='img/Infeccion4.jpeg') }}" alt="Oído de perro inflamado y enrojecido por otitis">
+        <div class="derm-problem-scrim"></div>
+        <span class="derm-problem-num">04</span>
+        <div class="derm-problem-body">
+          <h3>Otitis</h3>
+          <p>Oídos inflamados, con picazón, mal olor, enrojecimiento y dolor.</p>
+        </div>
       </article>
       <article class="derm-problem-card">
-        <div class="derm-problem-img"><div class="img-placeholder"><div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div><span class="img-placeholder-label">Foto caso</span></div></div>
-        <div class="derm-problem-body"><h3>Quistes &amp; tumoraciones</h3><p>Bultos o crecimientos en la piel que conviene revisar a tiempo.</p></div>
+        <img class="derm-problem-photo" src="{{ url_for('static', filename='img/Infeccion5.jpeg') }}" alt="Bulto o tumoración en la piel de un perro">
+        <div class="derm-problem-scrim"></div>
+        <span class="derm-problem-num">05</span>
+        <div class="derm-problem-body">
+          <h3>Quistes &amp; tumoraciones</h3>
+          <p>Bultos o crecimientos en la piel que conviene revisar a tiempo.</p>
+        </div>
       </article>
       <article class="derm-problem-card">
-        <div class="derm-problem-img"><div class="img-placeholder"><div class="img-placeholder-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div><span class="img-placeholder-label">Foto caso</span></div></div>
-        <div class="derm-problem-body"><h3>Pododermatitis</h3><p>Patas inflamadas, lamido constante y heridas entre los dedos.</p></div>
+        <img class="derm-problem-photo" src="{{ url_for('static', filename='img/Infeccion6.jpeg') }}" alt="Pata de perro inflamada entre los dedos por pododermatitis">
+        <div class="derm-problem-scrim"></div>
+        <span class="derm-problem-num">06</span>
+        <div class="derm-problem-body">
+          <h3>Pododermatitis</h3>
+          <p>Patas inflamadas, lamido constante y heridas entre los dedos.</p>
+        </div>
       </article>
     </div>
   </div>
 </section>
+
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ PRECIO / CONSULTA ━━ -->
 <section class="section derm-pricing" id="precios">
   <div class="container">
