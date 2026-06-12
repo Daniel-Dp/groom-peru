@@ -1238,15 +1238,17 @@ section { position: relative; }
 }
 .derm-result-text b { color: var(--teal-dark); font-weight: 800; }
 
-/* ─── TESTIMONIOS ─── */
-.derm-testi { background: white; }
+/* ─── TESTIMONIOS
+/* ─── .derm-testi { background: white; } ─── */
+.derm-testi { background: var(--teal-soft);}
 .derm-testi-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 .derm-testi-card {
-  background: var(--teal-soft);
+  /* ─── background: var(--teal-soft);─── */
+  background: white;
   border-radius: var(--radius-lg);
   padding: 28px 26px;
   border: 1px solid rgba(61,165,201,0.18);
