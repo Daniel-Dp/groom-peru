@@ -2148,6 +2148,13 @@ footer { background: #000; color: rgba(255,255,255,0.7); padding: 80px 0 32px; }
   .lodging-card { padding: 28px 22px; }
 }
 
+/* Desktop y mobile: Centrar 2 cajas JM adicionales */
+.servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(4),
+.servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(5) {
+  grid-column: 1 / -1;
+  max-width: 320px;
+  margin: 0 auto;
+}
 
 /* ═══════════════════════════════════════════════════════
    SECTION COLOR RHYTHM OVERRIDES (turquesa servicios + black proceso)
