@@ -9,18 +9,18 @@
 const PRICES = {
   'san-miguel': {
     classic: {
-      toy:           { corto: 30, largo: 35 },
+      toy:           { corto: 30, largo: 40 },
       mediano:       { corto: 40, largo: 45 },
       estandar:      { corto: 50, largo: 60 },
-      gigante:       { corto: 60, largo: 70 },
-      'extra-gigante': { corto: 80, largo: 90 }
+      gigante:       { corto: 70, largo: 85 },
+      'extra-gigante': { corto: 80, largo: 95 }
     },
     premium: {
-      toy:           { corto: 45, largo: 50 },
-      mediano:       { corto: 50, largo: 55 },
+      toy:           { corto: 45, largo: 55 },
+      mediano:       { corto: 50, largo: 60 },
       estandar:      { corto: 60, largo: 70 },
-      gigante:       { corto: 80, largo: 90 },
-      'extra-gigante': { corto: 90, largo: 110 }
+      gigante:       { corto: 80, largo: 100 },
+      'extra-gigante': { corto: 100, largo: 110 }
     },
     gold: {
       toy:           { corto: 60, largo: 75 },
@@ -34,12 +34,12 @@ const PRICES = {
       'mediano':    40,
       'gigante':    55
     },
-    tratamiento:    { 'peq-med': 20, 'est-gra': 30 }
+    tratamiento:    { 'peq-med': 30, 'est-gra': 30 }
   },
   'jesus-maria': {
     classic: {
-      toy:           { corto: 35, largo: 40 },
-      mediano:       { corto: 40, largo: 45 },
+      toy:           { corto: 40, largo: 45 },
+      mediano:       { corto: 45, largo: 50 },
       estandar:      { corto: 50, largo: 65 },
       grande:        { corto: 70, largo: 80 },
       gigante:       { corto: 85, largo: 95 }
@@ -197,7 +197,7 @@ function renderExtraServices() {
   $('#price-cortes').innerHTML = cortesHTML;
 
   // Tratamientos (same precios across sedes but rendered anyway)
-  $('#price-tratamiento').innerHTML = `Pequeño–Mediano <b>S/ ${trat['peq-med']}</b> · Estándar–Grande <b>S/ ${trat['est-gra']}</b>`;
+  $('#price-tratamiento').innerHTML = `Desde <b>S/ 25</b>`;
 }
 
 function renderDesmotados() {
