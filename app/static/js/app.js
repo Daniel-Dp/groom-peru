@@ -203,7 +203,7 @@ function renderExtraServices() {
 function renderDesmotados() {
   const el = $('#price-desmotados');
   if (!el) return;
-  el.innerHTML = `Desde <b>S/ 15</b> · varía por tipo y talla`;
+  el.innerHTML = `Desde <b>S/ 20</b> · varía por tipo y talla`;
 }
 
 function updateSedeUI() {
