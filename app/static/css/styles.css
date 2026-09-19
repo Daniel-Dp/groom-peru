@@ -393,26 +393,23 @@ section { position: relative; }
 
 .extras-row { 
   display: grid; 
-  /* Auto-fit calcula cuántas tarjetas entran por fila y las centra */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  /* Usamos 6 columnas para poder centrar de forma simétrica */
+  grid-template-columns: repeat(6, 1fr); 
   gap: 20px; 
   margin-top: 32px; 
-  justify-content: center; /* Centra las tarjetas excedentes en la última fila */
-  max-width: 1000px; /* Asegura un ancho máximo contenido */
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
 }
 .extra-card { 
+  /* Cada tarjeta de la primera fila ocupa 2 columnas (2 x 3 = 6 columnas en total) */
+  grid-column: span 2; 
+
   background: rgba(255,255,255,0.03); 
   border: 1px solid rgba(255,255,255,0.08); 
   border-radius: var(--radius); 
   padding: 24px; 
   transition: all .25s; 
-
-  /* Propiedades para igualar altos y acomodar el precio abajo */
   display: flex;
   flex-direction: column;
-  height: 100%; 
 }
 .extra-card:hover { border-color: rgba(255,229,0,0.4); }
 .extra-card .eyebrow { color: var(--yellow); margin-bottom: 12px; display: block; }
@@ -427,7 +424,16 @@ section { position: relative; }
 }
 .extra-price { font-family: 'Fraunces', serif; color: var(--yellow); font-size: 18px; font-weight: 500; }
 .extra-price span { font-size: 12px; color: rgba(255,255,255,0.5); font-family: 'Nunito',sans-serif; font-weight: 600; }
+/* REGLAS PARA LAS 2 TARJETAS DE ABAJO (Tratamiento de Color y Perfilados) */
+.servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(4) {
+  /* Ocupa de la columna 2 a la 4 (2 de espacio) */
+  grid-column: 2 / 4; 
+}
 
+.servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(5) {
+  /* Ocupa de la columna 4 a la 6 (2 de espacio) */
+  grid-column: 4 / 6; 
+}
 /* ─── GUARDERIA / HOSPEDAJE (JM only) ─── */
 .lodging { background: var(--yellow); color: var(--black); position: relative; overflow: hidden; }
 .lodging::after { content: 'JESÚS MARÍA'; position: absolute; bottom: -32px; right: -20px; font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 200px; color: rgba(0,0,0,0.05); letter-spacing: -0.05em; pointer-events: none; line-height: 1; white-space: nowrap; }
