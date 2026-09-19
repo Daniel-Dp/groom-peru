@@ -2156,21 +2156,21 @@ footer { background: #000; color: rgba(255,255,255,0.7); padding: 80px 0 32px; }
 }
 .servicios .extras-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
-
+.servicios .extras-row .extra-card:nth-child(-n+3) {
+  grid-column: span 1;
+}
 /* Contenedor wrapper para centrar las 2 cajas */
 .servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(4) {
   grid-column: 2 / 3;
-  justify-self: end;
-  margin-right: 10px;
+  grid-row: 2;
 }
 
 .servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(5) {
-  grid-column: 2 / 4;
-  justify-self: start;
-  margin-left: 10px;
+  grid-column: 4 / 5;
+  grid-row: 2;
 }
 /* ═══════════════════════════════════════════════════════
    SECTION COLOR RHYTHM OVERRIDES (turquesa servicios + black proceso)
