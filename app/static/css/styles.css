@@ -2151,18 +2151,20 @@ footer { background: #000; color: rgba(255,255,255,0.7); padding: 80px 0 32px; }
 /* Desktop y mobile: Centrar 2 cajas JM adicionales */
 
 /* Contenedor wrapper para centrar las 2 cajas */
-.servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(4) {
-  grid-column: 1 / 4;
+.servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(4),
+.servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(5) {
+  grid-column: 2 / 3;
   grid-row: 2;
-  width: 280px;
-  margin: 0 auto 0 0;
+  display: inline-block;
+  width: auto;
+}
+
+.servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(4) {
+  margin-right: 15px;
 }
 
 .servicios .extras-row .extra-card.jm-only:not(.hidden):nth-child(5) {
-  grid-column: 1 / 4;
-  grid-row: 2;
-  width: 280px;
-  margin: 0 0 0 auto;
+  margin-left: 15px;
 }
 /* ═══════════════════════════════════════════════════════
    SECTION COLOR RHYTHM OVERRIDES (turquesa servicios + black proceso)
