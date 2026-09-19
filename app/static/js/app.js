@@ -31,8 +31,8 @@ const PRICES = {
     },
     cortes: {
       'toy':        35,
-      'mediano':    40,
-      'gigante':    55
+      'mediano':    45,
+      'gigante':    65
     },
     tratamiento:    { 'peq-med': 30, 'est-gra': 30 }
   },
